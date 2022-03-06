@@ -81,4 +81,26 @@ class ProductTest < ActiveSupport::TestCase
     assert product.invalid?
     assert_equal [I18n.translate('errors.messages.taken')], product.errors["title"]
   end
+
+  test "title should be minimum 10" do
+    product = Product.new(
+              title: "a" * 10,
+              description: "Title should be minimum 10",
+              image_url: "7apps.jpg",
+              price: 9.99
+
+              )
+    assert product.valid?
+  end
+
+  test "title shouldn't valid less than 10" do
+    product = Product.new(
+              title: "a" * 9,
+              description: "Title should be minimum 10",
+              image_url: "7apps.jpg",
+              price: 9.99
+
+              )
+    assert product.invalid?
+  end
 end
