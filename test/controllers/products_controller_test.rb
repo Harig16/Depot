@@ -9,6 +9,10 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get products_url
     assert_response :success
+    assert_select "a[href=?]",new_product_path
+    assert_select "a[href=?]",product_path(@product)
+    assert_select "a[href=?]",edit_product_path(@product)
+    assert_select "a[href=?]", product_path((@product)), method: :delete
   end
 
   test "should get new" do
