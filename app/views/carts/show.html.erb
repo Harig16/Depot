@@ -2,11 +2,29 @@
   <aside id="notice"><%= notice %></aside>
 <% end %>
 
-<h2>Your Pragmatic Cart</h2>
+<h2>Your Cart</h2>
 
-
-<ul>
+<table>
+  <thead id="title">
+    <tr>
+      <td>Quantity</td>
+      <td>Product</td>
+      <td>Price</td>
+    </tr>
+  </thead>
   <% @cart.line_items.each do |item| %>
-    <li><%= item.quantity %> &times; <%= item.product.title %></li>
+  <tr>
+    <td class="quantity"><%= item.quantity %></td>
+    <td><%= item.product.title %></td>
+    <td class="price"><%= number_to_currency(item.total_price) %></td>
+  </tr>
   <% end %>
-</ul>
+  <tfoot>
+    <tr>
+      <th colspan="2">Total: </th>
+      <th class="price"><%= number_to_currency(@cart.total_price) %></th>
+    </tr>
+  </tfoot>
+</table>
+
+<%= button_to "Empty Cart", @cart, method: :delete, data: { confirm: "Are you sure?"} %>
