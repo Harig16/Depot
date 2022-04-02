@@ -1,0 +1,26 @@
+<article>
+  <% if notice %>
+    <aside id="notice"><%= notice %></aside>
+  <% end %>
+
+  <h2>Your Cart</h2>
+
+  <table>
+    <thead id="title">
+      <tr>
+        <td>Quantity</td>
+        <td>Product</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <%= render cart.line_items %> <%# rendering partial file in line_items/_line_item.html.erb %>
+    <tfoot>
+      <tr>
+        <th colspan="2">Total: </th>
+        <th class="price"><%= number_to_currency(cart.total_price) %></th>
+      </tr>
+    </tfoot>
+  </table>
+
+  <%= button_to "Empty Cart", cart, method: :delete, data: { confirm: "Are you sure?"} %>
+</article>

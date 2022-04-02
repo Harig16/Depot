@@ -23,8 +23,8 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
     
     assert_select "h2", "Your Cart"
-    assert_select "main.carts tr td", "Programming Ruby 1.9"
-    assert_select "main.carts tr td.price", "$#{products(:ruby).price}"
+    assert_select "tr td", "Programming Ruby 1.9"
+    assert_select "tr td.price", "$#{products(:ruby).price}"
   end
 
   test "should show line_item" do
@@ -47,6 +47,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       delete line_item_url(@line_item)
     end
 
-    assert_redirected_to line_items_url
+    assert_redirected_to store_index_url
   end
 end
