@@ -34,6 +34,7 @@ class LineItemsController < ApplicationController
         session[:counter] = 0
         #byebug
         format.html { redirect_to store_index_url } #@line_item.cart }
+        format.js
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }

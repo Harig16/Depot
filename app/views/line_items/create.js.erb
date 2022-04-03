@@ -1,0 +1,3 @@
+/* invoked from line item controller creaate action format.js*/
+cart = document.getElementById("cart")
+cart.innerHTML = "<%= j render(@cart) if @cart.line_items.present? %>"
