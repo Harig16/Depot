@@ -49,4 +49,12 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to store_index_url
   end
+
+  test "should create line item via ajax old" do
+    assert_difference('LineItem.count') do
+      post line_items_url, params: { product_id: products(:ruby).id }, xhr: true  # xhr is XMLHTTPRequest used for ajax
+    end
+    assert_response :success
+    assert_match /<tr class=\\"line-item-highlighting/, @response.body #this how javacript is invoked and tested
+  end
 end

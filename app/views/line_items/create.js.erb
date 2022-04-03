@@ -1,3 +1,4 @@
-/* invoked from line item controller creaate action format.js*/
+/* invoked from line item controller create action format.js*/
+/* link_to or button_to enable remote: true */
 cart = document.getElementById("cart")
 cart.innerHTML = "<%= j render(@cart) if @cart.line_items.present? %>"
