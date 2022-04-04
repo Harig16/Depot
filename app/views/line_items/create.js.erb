@@ -6,4 +6,4 @@ cart.innerHTML = "<%= j render(@cart) if @cart.line_items.present? %>"
 /* Add item and empty the cart and add item again, flash message of cart is destroyed in page after adding the item. To remove dynamicallly find by id notice and set style.display is none */
 
 notice = document.getElementById("notice")
-if (notice) notice.style.display = "none"
+notice.style.display = "none"
