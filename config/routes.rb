@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :line_items
+  resources :line_items do
+    member do
+      post :remove_item
+    end
+  end
   resources :carts
   root to: 'store#index', as: "store_index"
   resources :products

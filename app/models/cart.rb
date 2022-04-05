@@ -12,6 +12,16 @@ class Cart < ApplicationRecord
     current_item.price = current_item.total_price
     current_item
   end
+  
+  def reduce_product(product)
+    if product.quantity < 2
+      product.destroy
+    else
+      product.quantity -= 1
+      product.price = product.total_price
+      product
+    end
+  end
 
   def total_price
     line_items.to_a.sum { |item| item.total_price }
