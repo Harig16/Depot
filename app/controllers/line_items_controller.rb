@@ -71,11 +71,15 @@ class LineItemsController < ApplicationController
     product = LineItem.find(params[:id])
     @line_item = @cart.reduce_product(product)
     respond_to do |format|
+      #byebug
       unless @line_item.nil?
         if @line_item.save
           format.html { redirect_to store_index_url }
           format.js { @current_item = @line_item }
         end
+      else
+        format.html { redirect_to store_index_url }
+        format.js
       end
     end
   end

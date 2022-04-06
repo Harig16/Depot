@@ -14,13 +14,15 @@ class Cart < ApplicationRecord
   end
   
   def reduce_product(product)
+    #byebug
     if product.quantity < 2
       product.destroy
+      product = nil # after quantity reached 1 return nil value
     else
       product.quantity -= 1
       product.price = product.total_price
-      product
     end
+    product
   end
 
   def total_price
