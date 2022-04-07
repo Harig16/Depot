@@ -1,9 +1,10 @@
 /* invoked from line item controller create action format.js*/
 /* link_to or button_to enable remote: true */
 cart = document.getElementById("cart")
+cart.hidden = false;
 cart.innerHTML = "<%= j render(@cart) if @cart.line_items.present? %>"
 
 /* Add item and empty the cart and add item again, flash message of cart is destroyed in page after adding the item. To remove dynamicallly find by id notice and set style.display is none */
 
 notice = document.getElementById("notice")
-notice.style.display = "none"
+notice.hidden = true
