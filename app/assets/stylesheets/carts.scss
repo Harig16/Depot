@@ -20,7 +20,7 @@
   }
 
   td.quantity::after {
-    content: " x";
+    content: " ";
   }
 
   td.price {
@@ -57,5 +57,16 @@
   .delete-icon {
     font-size:20px;
     color: black;
+  }
+
+  .action {
+    margin: 0 5px;
+    padding: 0.5em 0.8em;
+    text-align: right;
+  }
+
+  form.button_to {
+    display: inline-block;
+    margin: 0 5px;
   }
 }
