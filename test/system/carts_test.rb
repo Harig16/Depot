@@ -11,13 +11,15 @@ class CartsTest < ApplicationSystemTestCase
   end
 
   test "creating a Cart" do
-    visit carts_url
-    click_on "New Cart"
+    visit store_index_url
+    click_on "Add to Cart", match: :first
+    page.find("#cart article")
+    assert_selector "h2", text: "Your Cart"
 
-    click_on "Create Cart"
+    #click_on "Create Cart"
 
-    assert_text "Cart was successfully created"
-    click_on "Back"
+    #assert_text "Cart was successfully created"
+    #click_on "Back"
   end
 
   test "updating a Cart" do
@@ -27,7 +29,7 @@ class CartsTest < ApplicationSystemTestCase
     click_on "Update Cart"
 
     assert_text "Cart was successfully updated"
-    click_on "Back"
+    #click_on "Back"
   end
 
   test "destroying a Cart" do

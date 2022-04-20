@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: One
+  title: One_expanding_title
   description: MyText
   image_url: 7apps.jpg
   price: 9.99

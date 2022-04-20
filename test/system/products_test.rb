@@ -26,7 +26,7 @@ class ProductsTest < ApplicationSystemTestCase
 
   test "updating a Product" do
     visit products_url
-    click_on "Edit", match: :first
+    click_on "edit", match: :first
 
     fill_in "Description", with: @product.description
     fill_in "Image url", with: @product.image_url
@@ -41,7 +41,7 @@ class ProductsTest < ApplicationSystemTestCase
   test "destroying a Product" do
     visit products_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "Delete", match: :first
     end
 
     assert_text "Product was successfully destroyed"
