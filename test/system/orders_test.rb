@@ -77,9 +77,9 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in "order_address", with: "test user address"
     fill_in "order_email", with: "test.user@email.com"
     
-    assert_no_selector "#order_credit_card_number"
+    assert_no_selector "#order_credit_card"
     select "Credit Card", from: "Paytype"
-    assert_selector "#order_credit_card_number"
+    assert_selector "#order_credit_card"
   end
 
   test "purchase order number" do

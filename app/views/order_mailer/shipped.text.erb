@@ -1,0 +1,7 @@
+Dear <%= @order.name %>,
+
+Pragmatic Order Shipped
+
+This is to inform you that we've shipped your recent order:
+
+<%= render @order.line_items %>

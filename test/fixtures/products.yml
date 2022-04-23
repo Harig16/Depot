@@ -9,7 +9,7 @@ one:
 two:
   title: Two
   description: MyText
-  image_url: 7apps.jpg
+  image_url: lorem.jpg
   price: 9.99
 
 ruby:
