@@ -1,6 +1,8 @@
 require 'pago'
 
 class Order < ApplicationRecord
+  after_save :shipping_detail_updated 
+
   has_many :line_items, dependent: :destroy
   enum pay_type: {
     "Check" => 0,
@@ -49,4 +51,12 @@ class Order < ApplicationRecord
       raise payment_result.error
     end
   end
+
+  private 
+
+    def shipping_detail_updated
+      if :ship_date_changed?
+        OrderMailer.shipped(self).deliver_later
+      end
+    end
 end

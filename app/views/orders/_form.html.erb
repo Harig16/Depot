@@ -26,6 +26,11 @@
     <%= form.text_field :email, size: 40 %>
   </div>
 
+  <div class="field">
+    <%= form.label :ship_date %>
+    <%= form.date_field :ship_date, min: Date.today %>
+  </div>
+
   <!--div class="field">
     <%= form.label :pay_type %>
     <%= form.select :pay_type, Order.pay_types.keys, prompt: "select payment mode" %>
