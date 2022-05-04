@@ -1,0 +1,8 @@
+<% if flash[:alert] %>
+  <aside id="notice"><%= flash[:alert] %></aside>
+<% end %>
+<div>
+  <h1>Welcome</h1>
+  <h3>It's <%= Time.now.strftime("at %I:%M%p") %></h3>
+  <p>We have <%= pluralize(@total_orders, "order") %></p>
+</div>
