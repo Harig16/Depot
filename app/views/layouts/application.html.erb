@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Depot</title>
+    <title>Pragprog Book Online Store</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -29,7 +29,17 @@
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
           <div id="time"><%= time_tag Time.now  %></div>
-        </ul> 
+        </ul>
+        <% if session[:user_id] %>
+          <nav class="logged_in_nav">
+            <ul>
+              <li><%= link_to "Order", orders_path %></li>
+              <li><%= link_to "Product", products_path %></li>
+              <li><%= link_to "User", users_path %></li>
+              <li><%= link_to "Logout", logout_path, method: :delete %></li>
+            </ul>
+          </nav>
+        <% end %>
       </nav>
       <main class='<%= controller.controller_name %>'>
         <%= yield %>

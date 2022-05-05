@@ -57,6 +57,11 @@ class UsersController < ApplicationController
     end
   end
 
+  #raise expection from user model. Transaction gets rollback when last user is delete and send infromation to user via controller.
+  rescue_from "User::Error" do |expection|
+    redirect_to users_path, notice: expection.message
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
