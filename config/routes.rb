@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     post "login" => :create 
     delete "logout" => :destroy 
   end
+
+  get "password/", to: "passwords#edit", as: "edit_password"
+  patch "password/", to: "passwords#update"
+
   resources :users
   resources :orders
   resources :line_items do

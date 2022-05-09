@@ -1,0 +1,29 @@
+<div class="depot_form">
+  <%= form_with(url: edit_password_path, method: :patch) do |form| %>
+
+    <% flash.each do |k, v| %>
+      <aside id="notice"><%= v %></aside>
+    <% end %>
+
+    <h2>Enter User Details</h2>
+
+    <div class="field">
+      <%= form.label :current_password %>
+      <%= form.password_field :current_password, size: 40 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password, size: 40 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :password_confirmation %>
+      <%= form.text_field :password_confirmation, id: :user_password_confirmation, size: 40 %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Update Password" %>
+    </div>
+  <% end %>
+</div>
