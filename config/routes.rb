@@ -17,11 +17,18 @@ Rails.application.routes.draw do
     end
   end
   resources :carts
-  root to: 'store#index', as: "store_index"
+  #root to: 'store#index', as: "store_index"
   resources :products do
     member do
       get :who_bought
     end
+  end
+
+  scope '(:locale)' do
+    resources :carts
+    resources :orders
+    resources :line_items
+    root 'store#index', as: "store_index", via: :all
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
