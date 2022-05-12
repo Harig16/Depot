@@ -3,7 +3,7 @@
     <aside id="notice"><%= notice %></aside>
   <% end %>
 
-  <h2>Your Cart</h2>
+  <h2><%= t('.title') %>t</h2>
 
   <table>
     <thead id="title">
@@ -23,7 +23,7 @@
   </table>
 
   <div class="action">
-    <%= button_to "Empty Cart", cart, method: :delete, data: { confirm: "Are you sure?"}, remote: true %>
-    <%= button_to "Check Out", new_order_path, method: :get, class: "checkout" %>
+    <%= button_to t('.empty'), cart, method: :delete, data: { confirm: "Are you sure?"}, remote: true %>
+    <%= button_to t('.checkout'), new_order_path, method: :get, class: "checkout" %>
   </div>
 </article>

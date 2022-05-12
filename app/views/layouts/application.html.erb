@@ -24,11 +24,11 @@
           </div>
         <% end %>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/question">Question</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <div id="time"><%= time_tag Time.now  %></div>
+          <li><a href="/"><%= t('.home') %></a></li>
+          <li><a href="/question"><%= t('.question') %></a></li>
+          <li><a href="/news"><%= t('.news') %></a></li>
+          <li><a href="/contact"><%= t('.contact') %></a></li>
+          <div id="time"><%= l Time.now, format: :short %></div>
         </ul>
         <% if session[:user_id] %>
           <nav class="logged_in_nav">
