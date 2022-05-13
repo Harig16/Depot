@@ -22,6 +22,9 @@ es:
       title:    "Carrito de la Compra"
       empty:    "Vaciar Carrito"
       checkout: "Comprar"
+      quantity: "Cantidad"
+      product:  "producto"
+      price:    "precio"
 
   number:
     currency:
@@ -31,3 +34,27 @@ es:
         seperator:    ","
         delimiter:    "."
         format:       "%n&nbsp;%u"
+  orders:
+    new:
+      legend: "Por favor, introduzca sus datos"
+    form:
+      name:           "Nombre"
+      address_html:   "Direcci&oacute;n"
+      email:          "E-mail"
+      ship_date:      "Fecha de envío"
+      place_order:    "realizar pedido"
+      pay_type:       "Tipo de pago"
+      pay_prompt_html: "Seleccionar modo de pago" 
+      pay_types:
+        check:          "Cheque" 
+        credit_card:    "tarjeta de crédito"
+        purchase_order: "orden de compra"
+      no_pay_type:      "Seleccionar tipo de pago"
+      check_pay_type:
+        routing:        "enrutamiento #"
+        account:        "cuenta #"
+      credit_card_pay_type:
+        cc:           "CC #"
+        expire_date:  "Fecha de caducidad #"
+      purchase_order_pay_type:
+        po_html:           "DESPUÉS #"

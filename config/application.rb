@@ -18,5 +18,7 @@ module Depot
 
     # ignore credit card value
     config.filter_parameters = [ :credit_card_number ]
+    #configuring I18n in middleware
+    config.middleware.use I18n::JS::Middleware
   end
 end

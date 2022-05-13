@@ -54,6 +54,9 @@ en:
       title: "Your Cart"
       empty: "Empty Cart"
       checkout: "Checkout"
+      quantity: "Quantity"
+      product: "Product"
+      price:    "Price"
   
   number:
     currency:
@@ -63,3 +66,28 @@ en:
         seperator:    "."
         delimiter:    ","
         format:       "%u%n"
+
+  orders:
+    new:
+      legend: "Please Enter Your Details"
+    form:
+      name:           "Name"
+      address_html:   "Address"
+      email:          "Email"
+      ship_date:      "Ship Date"
+      place_order:    "Place Order"
+      pay_type:       "Pay Type"
+      pay_prompt_html: "Select Payment Mode" 
+      pay_types:
+        check:          "Check"   
+        credit_card:    "Credit Card"
+        purchase_order: "Purchase Order"
+      no_pay_type:      "Select Payment Type"
+      check_pay_type:
+        routing:        "Routing #"
+        account:        "Account #"
+      credit_card_pay_type:
+        cc:           "CC #"
+        expire_date:  "Expire Date #"
+      purchase_order_pay_type:
+        po:           "PO #"

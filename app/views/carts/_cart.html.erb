@@ -3,14 +3,14 @@
     <aside id="notice"><%= notice %></aside>
   <% end %>
 
-  <h2><%= t('.title') %>t</h2>
+  <h2><%= t('.title') %></h2>
 
   <table>
     <thead id="title">
       <tr>
-        <td>Quantity</td>
-        <td>Product</td>
-        <td>Price</td>
+        <td><%= t('.quantity') %></td>
+        <td><%= t('.product') %></td>
+        <td><%= t('.price') %></td>
       </tr>
     </thead>
     <%= render_order cart.line_items %> <%# rendering partial file in line_items/_line_item.html.erb %>
