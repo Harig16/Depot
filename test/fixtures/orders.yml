@@ -6,6 +6,19 @@ one:
   email: test.user@xyz.com
   pay_type: Check
 
+another_one:
+  name: AnotherOne
+  address: Somewhere IN
+  email: anotherone@example.com
+  pay_type: Check
+  created_at: <%= 2.days.ago %>
+
+other_customer:
+  name: OtherCustomer
+  address: Somewhere UK
+  email: othercustomer@example.com
+  pay_type: Check
+
 two:
   name: MyString
   address: MyText
