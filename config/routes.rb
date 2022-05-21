@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :support_requests, only: [:index, :update]
+
   scope '(:locale)' do
     resources :carts
     resources :orders
